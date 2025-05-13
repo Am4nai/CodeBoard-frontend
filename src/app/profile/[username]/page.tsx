@@ -13,6 +13,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { fetchPostsByUsername } from '@/api/posts';
 import { fetchPublicProfileData, fetchProfileSettings, updateProfileSettings } from '@/api/profile';
 import { deletePostApi } from '@/api/posts'; // Импортируем функцию для удаления поста
+import { ProfileSettings } from '@/api/profile'
 
 interface User {
   id: number;
@@ -106,12 +107,12 @@ export default function ProfilePage() {
   const handleUpdateProfile = async () => {
     if (!user || !isCurrentUser) return;
   
-    const data = {
+    const data: Partial<ProfileSettings> = {
       bio: user.description || '',
       avatarUrl: '', // Можно передать пустое значение или undefined
       website: user.socialLink || '',
-      theme: darkThemeEnabled ? 'DARK' : 'LIGHT',
-      notificationsEnabled: notificationsEnabled,
+      theme: darkThemeEnabled ? 'DARK' : 'LIGHT', // 👈 это теперь строго соответствует типу
+      notificationsEnabled,
     };
   
     console.log('Sending data to server:', data);
