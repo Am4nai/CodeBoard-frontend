@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: '/', // Корневой URL
+        destination: '/auth', // Перенаправление на страницу /auth
+        permanent: false, // Временное перенаправление (302)
+      },
+    ];
+  },
 };
 
 export default nextConfig;
