@@ -1,9 +1,9 @@
 // src/middleware.ts
 
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { getToken } from '@/utils/authUtils';
 
-export async function middleware(request: any) {
+export async function middleware(request: NextRequest) {
   const token = getToken(); // Проверяем наличие токена в куках
   console.log('Middleware executed. Token:', token); // Логируем токен
 

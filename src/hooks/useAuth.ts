@@ -5,11 +5,12 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { getToken, removeToken } from '@/utils/authUtils';
 import { API_BASE_URL } from '@/config/apiConfig'; // Импортируем базовый URL
+import { User } from '@/app/types'
 
 export const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true); // Новое состояние загрузки
-  const [user, setUser] = useState<any | null>(null); // Добавляем состояние для данных пользователя
+  const [user, setUser] = useState<User | null>(null); // Добавляем состояние для данных пользователя
   const router = useRouter();
 
   useEffect(() => {
