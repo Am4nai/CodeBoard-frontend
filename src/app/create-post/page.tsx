@@ -25,7 +25,7 @@ interface Tag {
 }
 
 export default function CreatePostPage() {
-  const { isAuthenticated, user } = useAuth(); // Проверяем аутентификацию
+  const { isAuthenticated } = useAuth(); // Проверяем аутентификацию
   const [tags, setTags] = useState<Tag[]>([]); // Состояние для доступных тегов
   const [languages, setLanguages] = useState<Language[]>([]); // Состояние для доступных языков
 

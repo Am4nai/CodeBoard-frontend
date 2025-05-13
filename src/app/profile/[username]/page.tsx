@@ -6,7 +6,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { InputField } from '@/components/InputField';
-import { TextArea } from '@/components/TextArea';
 import { Switch } from '@/components/Switch';
 import { PostCard } from '@/components/PostCard';
 import Masonry from 'react-masonry-css';

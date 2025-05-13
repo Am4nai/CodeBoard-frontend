@@ -99,7 +99,7 @@ export async function updateUser(userId: number, data: Partial<User>): Promise<U
       try {
         errorText = await response.text();
         console.error(`Server responded with status ${response.status}:`, errorText);
-      } catch (e) {
+      } catch {
         console.error('Failed to read error text from server');
       }
       throw new Error('Failed to update user.');

@@ -82,7 +82,7 @@ export async function fetchProfileSettings(userId: number): Promise<ProfileSetti
   }
 }
 
-export async function updateProfileSettings(userId: number, data: any) {
+export async function updateProfileSettings(userId: number, data: Partial<ProfileSettings>) {
   try {
     const token = Cookies.get('authToken');
 

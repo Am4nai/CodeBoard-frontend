@@ -421,7 +421,7 @@ export default function AdminPanel() {
           {/* Язык программирования */}
           <SelectField
             label="Programming Language"
-            options={languages.map(({ id, name }) => ({
+            options={languages.map(({ name }) => ({
               value: name,
               label: name,
             }))}
