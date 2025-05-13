@@ -1,3 +1,3 @@
 // src/config/apiConfig.ts
 
-export const API_BASE_URL = 'https://codeboard-production.up.railway.app'; // Базовый URL бэкенда
+export const API_BASE_URL = 'http://localhost:8080'; // Базовый URL бэкенда
